@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
 import string
 import random
-from django.http import JsonResponse
 
 
 # Create your views here.
@@ -16,6 +15,7 @@ def password_generate(request:HttpRequest):
   length = 10
   characters = string.ascii_letters + string.digits + string.punctuation
   password = ''.join(random.choice(characters) for i in range(length))
-  return JsonResponse({'password':password})
+  return HttpResponse(password)
+
 
 
