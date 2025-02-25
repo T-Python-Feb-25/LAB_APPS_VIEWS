@@ -17,7 +17,7 @@ def password_generate_view(requset:HttpRequest):
         password.append(random.choice(characters))
 
     password="".join(password)
-    return HttpResponse(password)
+    return HttpResponse(f"<ul><li>{password}</li></ul>")
 
 
 
